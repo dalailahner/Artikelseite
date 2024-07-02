@@ -765,11 +765,10 @@ a.toolbarBtn,
     stroke: none;
   }
 
-  &:has(.active) {
-    & .shareLink {
-      opacity: 1;
-      transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
-    }
+  &:has(.active) .shareLink,
+  & .shareLink:focus-visible {
+    opacity: 1;
+    transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
   }
 }
 @keyframes likeAnim {
@@ -856,7 +855,7 @@ a.toolbarBtn,
     transition: opacity 0.15s ease-out, bottom 0.15s ease-out;
   }
 
-  &:hover .glossarTooltip {
+  &:is(:hover, :focus-within) .glossarTooltip {
     bottom: 120%;
     opacity: 1;
     visibility: visible;
@@ -884,6 +883,7 @@ a.toolbarBtn,
   border-radius: var(--fullBorderRadius);
   background-color: var(--bgColor1);
   cursor: pointer;
+  outline-color: var(--bgColor1);
 
   & svg {
     fill: var(--accentColor);

@@ -1,6 +1,6 @@
 "use strict";
 
-// TODO: switch those 2 fuckers between build step and stupid work pc serving
+// TODO: switch those 2 fuckers between dev env and stupid work pc
 import Sortable from "sortablejs/modular/sortable.core.esm";
 // import Sortable from "../../node_modules/sortablejs/modular/sortable.core.esm.js";
 
