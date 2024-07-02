@@ -447,11 +447,6 @@ a.accountMenuItem {
 
 /***********/
 /* ARTICLE */
-article {
-  padding-top: var(--headlineSize);
-  width: min(100%, var(--pageWidth));
-}
-
 .aboveArticle {
   margin-bottom: var(--headlineSize);
   width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
@@ -461,44 +456,47 @@ article {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--headlineSize);
-  font-size: 1rem;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
+}
 
-  & .breadcrumbs {
-    align-self: flex-start;
-    flex-wrap: wrap;
-    color: var(--accentColor);
-    font-size: 1em;
-    font-weight: 700;
+.breadcrumbs {
+  align-self: flex-start;
+  flex-wrap: wrap;
+  color: var(--accentColor);
+  font-weight: 700;
 
-    & .material-symbols-rounded {
-      color: inherit;
-    }
-  }
-  & .breadcrumb {
-    padding: 0.25em 0.33em;
+  & .material-symbols-rounded {
     color: inherit;
-    line-height: 1;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: all 0.1s ease-out;
+  }
+}
+.breadcrumb {
+  padding: 0.25em 0.33em;
+  color: inherit;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: all 0.1s ease-out;
 
-    &:hover {
-      color: var(--bgColor1);
-      background-color: var(--accentColor);
-    }
+  &:hover {
+    color: var(--bgColor1);
+    background-color: var(--accentColor);
   }
+}
 
-  & .tags {
-    gap: calc(var(--headlineSize) / 2);
-  }
-  & .tag {
-    height: 2em;
-  }
+.aboveArticleTags {
+  gap: calc(var(--headlineSize) / 2);
+}
+.aboveArticleTag {
+  height: 1.75em;
+}
+
+article {
+  padding-top: var(--headlineSize);
+  width: min(100%, var(--pageWidth));
 }
 
 .articleImage {
@@ -806,10 +804,6 @@ a.toolbarBtn,
     @media screen and (min-width: 768px) {
       font-size: 1.25rem;
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   & h3 {
@@ -833,6 +827,7 @@ a.toolbarBtn,
   }
 }
 
+/* GLOSSAR */
 .glossarCont {
   position: relative;
 
@@ -895,6 +890,25 @@ a.toolbarBtn,
 }
 .glossarWord {
   color: var(--accentColor);
+}
+
+/* TAGS */
+.articleTags {
+  gap: var(--mainGap);
+  flex-wrap: wrap;
+}
+a.articleTag {
+  padding: 0.5em 1em;
+  color: var(--fgColor2);
+  text-decoration: none;
+  border-radius: var(--fullBorderRadius);
+  background-color: var(--bgColor3);
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--bgColor1);
+    background-color: var(--accentColor);
+  }
 }
 
 /* COMMENTS */
