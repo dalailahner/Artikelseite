@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script type="module" src="./assets/script.js"></script>
+    <title>Artikelseite Preview</title>
+  </head>
+  <body>
+    <a class="jumpToArticleLink" href="#articleStart">Zum Artikel springen</a>
+    <header class="frcc mainHeader">
+      <nav class="headerNav" aria-label="header">
+        <a class="snPlus" style="grid-area: snPlus" href="#"><img src="./static/assets/SNplus.svg" alt="SN Plus" /></a>
+        <div class="frcc logoCont" style="grid-area: logo">
+          <svg class="logo shortLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
+            <path
+              fill="var(--accentColor)"
+              d="m1035 534-22-17-689 952 21 17 52-71 284 158 231-186V985l-149-75 272-376Zm-297 830-220-111 123-169 97 50v230Zm248-868-22-16-82 111-208-137-258 177v344l138 66-281 391 24 17 689-953ZM773 734l-91 135-95-49V640l186 94Zm872-143v825l85 42-101 129-161-80V710l-106-53v912h-32V550h32v57l138-140 145 124zm-477-124 127 86v1033l-126-43-49 12V663l-92-67 140-129z" />
+          </svg>
+          <svg class="logo longLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850.4 107.7">
+            <g fill="var(--accentColor)">
+              <path
+                d="M203.8 79.7V27.4L190 19.2l-9.7 9V5.1l-9 3.5-5-1.3V80l14.3 10 23.2-10.3Zm-13.9-2.3-9.6-4V33.9l9.6 4.7v38.8Zm568.7-55.7h11.6l-7.4 12.8h-4.2v38.8l7.1 5.2-9.5 11.7-11.7-7.2V34.4h-4.3l18.4-22.5v9.8zm-113.2.5 9.4-3.3.1 57.4 4.4 3.4-10.2 10.9-8.6-7.4V19.5l4.9 2.7zm8.2-17.5-7.4 11.7-3.6 1.9 3.6-13.6h7.4zM468.4 10v66.3l6.8 3.4-8.1 10.4-13-6.5v-64l-8.5-4.3v73.3H443V6.7h2.6v4.5L456.7 0l11.7 10zM430 0l10.2 6.9V90l-10.1-3.5-3.9 1V15.8l-7.5-5.5L430 0zm-57 42-13.3-23L341 33.7v46L362.2 90l9.3-12.9-1.8-1.3-2.5 3.6L355 73V56.4l18.1-14.3Zm-10 5.4-8 6.2v-19l8 12.7Zm-31.7 42.4V29.7l-19.7-10.4L293.8 34v48.4l11.5 7.3 12-9v13l-14.6-.8-8.4 11.6 1.8 1.3 2.3-3.2 20 5 12.9-17.9Zm-14-12.4-9.6-4V33.9l9.6 4.8v38.7ZM266 19.5l5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6.1 3.2-7.5 10.5-13.1-6.5.1-50.8-4.6-2 6.5-11zM123.4 5.1v71.2l4.2 3.1-8.1 10.8-10.2-7.2V7.3l5.1 1.3 9-3.5zM104 79.7l-5.4-3.4V29.7L78.8 19.3 60.8 34v47.4l11.4 8.7 12-10.8v3.9l12 6.8 7.8-10.3Zm-19.5-2.5-9.4-3.8V34l9.4 4.8v38.5ZM61.3 6.4l-1.8-1.3L4 81.6 5.8 83l4.1-5.7L32.8 90l18.6-15V42.7l-12-6L61.2 6.4Zm-24 66.8-17.6-9 9.8-13.6 7.8 4.1v18.5Zm20-69.8L55.5 2 49 11 32.2 0 11.5 14.3v27.6l11.1 5.3L0 78.7 1.9 80 57.3 3.4ZM40.2 22.5l-7.4 10.9-7.5-4V15l14.9 7.5Zm482.4 57.2-5.4-3.4V29.7l-19.6-10.4L479.5 34v47.4l11.3 8.7 12-10.8v3.9l12 6.8 7.9-10.3ZM503.1 77l-9.4-3.7V34l9.4 4.7V77Zm319.3-57.9v9.3l12.3-9.5L846.2 30l-.1 46.3 4.3 2.8-7.9 11.4-10.3-7.3.1-43.8-9.9-5.5v42.4l4.3 3.1-8.2 10.8-10.1-7V19.5l4.6 2.7 9.4-3.1zm-249.5-14v23.3l12.2-8.9 11.6 10.6-.1 46.2 4.2 2.8-7.8 11.4-10.3-7.3.1-44-9.9-5.3v42.4l4.3 3.1-8.2 10.8-10.2-7V7.3l5.1 1.4 9-3.6z" />
+              <path
+                d="m544.4 19.4 17.7 10-8.8 10.3-11-5.9v39.5l10.4 6.2 2.6-3.6 1.8 1.3-9.4 13-19.6-10.3V33.6l16.3-14.2zm-164.2.1 5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6 3.2-7.5 10.5-13.1-6.5.1-50.6-4.5-2.2 6.5-11zm-239.5-.3 17.4 8.4-9.3 11.4 8.1 7v45.3l-16.6 10.5-11.1-7.9 6.9-9.1L143 88V50.7l-9.2-6.4 8.9-9.3-12.6-6.7 10.6-9.1zm79 .5 9.1 6.3v47.2l9.7 4.2V34.8l-3.5-3.5 10.9-11.6 6.8 5.8v50.7l5.2 3.3-8.2 10.5-8.4-5.5-11.7 5.5-14.8-10.5V34.8a69 69 0 0 1-4.6-4.6l9.5-10.5Zm391.1-.2 5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6.1 3.2-7.6 10.5-13.1-6.5.2-50.8-4.6-2 6.5-11zM803.3 42l-13.4-23-18.7 14.6v46L792.4 90l9.3-12.9-1.8-1.3-2.5 3.6-12.2-6.4V56.4l18-14.3Zm-10 5.4-8 6.2v-19l8 12.7ZM709.4 5.1v23.3l12.2-8.9 11.6 10.6-.1 46.2 4.3 2.8-7.9 11.4-10.3-7.3.1-44-9.9-5.3v42.4l4.3 3.1-8.2 10.8-10.1-7V7.3l5.1 1.4 8.9-3.6z" />
+              <path d="m680.9 19.4 17.8 10-8.9 10.3-11-5.9v39.5l10.4 6.2 2.7-3.6 1.7 1.3-9.4 13-19.5-10.3V33.6l16.2-14.2z" />
+            </g>
+          </svg>
+        </div>
+        <div class="frcfe menuIcons" style="grid-area: menu">
+          <div class="menuIconsItem">
+            <form class="frcfe searchForm" name="searchForm" action="">
+              <input class="searchInput" name="search" type="search" autocomplete="off" required />
+              <button class="frcc headerNavBtn searchBtn" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 2px" viewBox="0 0 24 24">
+                  <circle cx="9" cy="9" r="6.5" />
+                  <path d="m21.2 21.2-7.6-7.6" />
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="menuIconsItem">
+            <button class="frcc headerNavBtn account" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.5 19s-2.2 4-8.5 4-8.5-4-8.5-4c2.2-2.2 5.2-3.5 8.5-3.5s6.3 1.3 8.5 3.5ZM12 4.8C9.7 4.8 7.8 6.7 7.8 9s1.9 4.2 4.2 4.2 4.2-1.9 4.2-4.2-1.9-4.2-4.2-4.2Z" style="fill: currentColor" />
+                <circle cx="12" cy="12" r="11" style="fill: none; stroke: currentColor; stroke-width: 2px" />
+              </svg>
+            </button>
+            <div class="accountMenuCont">
+              <div class="accountMenu" data-edit="false" role="menu">
+                <div class="frcsb accountMenuHead">
+                  <h3 class="accountMenuTitle">Hi Marie!</h3>
+                  <button class="frcc accountMenuEditBtn">
+                    <span class="material-symbols-rounded">edit</span>
+                  </button>
+                </div>
+                <div class="accountMenuDivider" role="separator"></div>
+                <div class="accountMenuSortable" role="group">
+                  <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                    <label class="checkboxToggle accountMenuToggle">
+                      <input checked type="checkbox" />
+                    </label>
+                    <span class="material-symbols-rounded">person</span>
+                    <span>Profil</span>
+                    <button class="frcc accountMenuItemHandle" type="button">
+                      <span class="material-symbols-rounded">drag_handle</span>
+                    </button>
+                  </a>
+                  <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                    <label class="checkboxToggle accountMenuToggle">
+                      <input checked type="checkbox" />
+                    </label>
+                    <span class="material-symbols-rounded">bookmark</span>
+                    <span>Lesezeichen</span>
+                    <button class="frcc accountMenuItemHandle" type="button">
+                      <span class="material-symbols-rounded">drag_handle</span>
+                    </button>
+                  </a>
+                  <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                    <label class="checkboxToggle accountMenuToggle">
+                      <input checked type="checkbox" />
+                    </label>
+                    <span class="material-symbols-rounded">credit_card</span>
+                    <span>Zahlungen</span>
+                    <button class="frcc accountMenuItemHandle" type="button">
+                      <span class="material-symbols-rounded">drag_handle</span>
+                    </button>
+                  </a>
+                  <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                    <label class="checkboxToggle accountMenuToggle">
+                      <input checked type="checkbox" />
+                    </label>
+                    <span class="material-symbols-rounded">settings</span>
+                    <span>Einstellungen</span>
+                    <button class="frcc accountMenuItemHandle" type="button">
+                      <span class="material-symbols-rounded">drag_handle</span>
+                    </button>
+                  </a>
+                </div>
+                <div class="accountMenuDivider" role="separator"></div>
+                <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                  <span class="material-symbols-rounded">support</span>
+                  <span>Support</span>
+                </a>
+                <div class="accountMenuDivider" role="separator"></div>
+                <a class="frcfs accountMenuItem" href="#" role="menuitem">
+                  <span class="material-symbols-rounded">logout</span>
+                  <span>Abmelden</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="menuIconsItem">
+            <button class="frcc headerNavBtn menu" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M2 18h20M2 12h20M2 6h20" style="fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 2px" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <article class="fccfs">
+      <div class="aboveArticle">
+        <nav class="frcfs breadcrumbs" aria-label="breadcrumbs">
+          <a class="breadcrumb" href="#">sn.at</a>
+          <span class="material-symbols-rounded"> chevron_forward </span>
+          <a class="breadcrumb" href="#">Leben</a>
+          <span class="material-symbols-rounded"> chevron_forward </span>
+          <a class="breadcrumb" href="#">Gesundheit</a>
+        </nav>
+        <div class="frcfe tags">
+          <a href="#"><img class="tag" src="./static/assets/Live.svg" alt="Live" /></a>
+          <a href="#"><img class="tag" src="./static/assets/SNplus.svg" alt="SN Plus" /></a>
+        </div>
+      </div>
+      <img class="articleImage" alt="Person schwimmt in See" src="https://unsplash.com/photos/E9PJO_vL3E8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8c3dpbW1pbmd8ZGV8MHx8fHwxNzE4MTI0NDg0fDA&force=true&w=680" />
+      <h1 id="articleStart" class="articleHeadline">Darum macht Schwimmen fit und glücklich</h1>
+      <p class="articleDate">
+        <time datetime="2024-06-02T17:00+0200">Donnerstag, <wbr />31. November 2024</time>
+      </p>
+      <div class="frcc authorCont">
+        <img class="authorImg" src="./static/assets/authorImage.jpg" alt="Marie Musterfrau" draggable="false" />
+        <div class="fcfsc authorDetails">
+          <div class="frcfs authorNameCont">
+            <a class="authorName" href="#">Marie Musterfrau</a>
+            <button class="followAuthorBtn" data-followed="false" type="button">Folgen</button>
+          </div>
+          <div class="frcfs authorRessorts">
+            <a href="#">Lifestyle</a>
+            <p>&middot;</p>
+            <a href="#">Gesundheit</a>
+          </div>
+        </div>
+      </div>
+      <div class="articleBody">
+        <div class="articleToolbar">
+          <button class="frcc toolbarBtn vorlesen" title="Vorlesen" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="11" />
+              <path class="pause" d="M10 8.2v7.6m4-7.6v7.6" />
+              <path class="play" d="M16.4 12 9.8 8.2v7.6l6.6-3.8z" style="fill: currentColor" />
+            </svg>
+          </button>
+          <button class="frcc toolbarBtn like" title="Gefällt mir" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M17.3 3.6A6 6 0 0 0 12 6.7c-1.1-1.8-3-3.1-5.3-3.1S1 6.1 1 9.6s2.8 6.8 4.7 8.7 5.7 4.3 6.3 4.3 4.4-2.4 6.3-4.3S23 13.4 23 9.6s-2.8-6-5.7-6Z" />
+            </svg>
+          </button>
+          <button class="frcc toolbarBtn bookmark" title="Lesezeichen" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path class="normal" d="M19.5 22.5 12 19l-7.5 3.5v-20h15v20z" />
+              <path class="add" d="M19.5 11.5v11L12 19l-7.5 3.5v-20H13m6.5 0v5M22 5h-5" />
+              <path class="remove" d="M19.5 11.5v11L12 19l-7.5 3.5v-20H13M22 5h-5" />
+            </svg>
+          </button>
+          <a class="frcc toolbarBtn comments" title="Kommentare" href="#commentSection">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16.6 21c-1.4.6-2.9 1-4.6 1-6 0-11-4.4-11-10S6 2 12 2s11 4.4 11 10-.6 4-1.8 5.6c0 1 .3 3.5 1.6 5.4-3.2-.4-5.8-1.6-8-3.4" />
+            </svg>
+          </a>
+          <div class="shareCont">
+            <button class="frcc toolbarBtn share" title="Teilen" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="m5.7 13.3 10 5.8m-10-8.4 10-5.8" />
+                <circle cx="17.9" cy="20.4" r="2.5" />
+                <circle cx="3.5" cy="12" r="2.5" />
+                <circle cx="17.9" cy="3.6" r="2.5" />
+              </svg>
+            </button>
+            <a
+              class="frcc toolbarBtn shareLink"
+              style="background-color: #25d366"
+              target="_blank"
+              href="whatsapp://send?text=https%3A%2F%2Fwww.opengraph.xyz%2Furl%2Fhttps%253A%252F%252Fwww.sn.at%252Fleben%252Fgesundheit%252Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 362">
+                <path
+                  d="M307.55 52.57A178.05 178.05 0 0 0 180.75 0C81.96 0 1.55 80.4 1.5 179.24a178.86 178.86 0 0 0 23.93 89.6L0 361.74l95.02-24.93a179.01 179.01 0 0 0 85.66 21.81h.08c98.78 0 179.2-80.4 179.24-179.24.02-47.9-18.6-92.93-52.45-126.8v-.01Zm-126.8 275.78h-.05a148.8 148.8 0 0 1-75.83-20.76l-5.45-3.23-56.39 14.79 15.05-54.98-3.54-5.64a148.6 148.6 0 0 1-22.77-79.29C31.8 97.1 98.63 30.27 180.82 30.27c39.79.02 77.2 15.53 105.32 43.7a148.06 148.06 0 0 1 43.6 105.4c-.04 82.14-66.87 148.98-148.98 148.98Zm81.73-111.57c-4.48-2.25-26.5-13.08-30.61-14.57-4.1-1.5-7.1-2.24-10.07 2.24-2.99 4.49-11.57 14.58-14.19 17.56-2.6 3-5.22 3.36-9.7 1.12-4.48-2.25-18.9-6.97-36.02-22.23-13.31-11.88-22.3-26.54-24.91-31.03-2.62-4.48-.28-6.9 1.95-9.13 2.01-2.01 4.48-5.24 6.72-7.85 2.25-2.61 2.99-4.48 4.48-7.47 1.5-2.99.75-5.6-.37-7.84-1.11-2.25-10.07-24.3-13.8-33.26-3.64-8.73-7.34-7.54-10.08-7.69-2.61-.13-5.6-.15-8.59-.15s-7.84 1.11-11.94 5.6c-4.11 4.49-15.68 15.32-15.68 37.36s16.05 43.34 18.29 46.34c2.24 2.99 31.58 48.22 76.5 67.63a256.9 256.9 0 0 0 25.54 9.44c10.73 3.4 20.5 2.93 28.21 1.77 8.6-1.29 26.5-10.83 30.23-21.3 3.73-10.45 3.73-19.43 2.61-21.3-1.11-1.86-4.1-2.98-8.58-5.23v-.01Z" />
+              </svg>
+            </a>
+            <a
+              class="frcc toolbarBtn shareLink"
+              style="background-color: #0866ff"
+              target="_blank"
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.opengraph.xyz%2Furl%2Fhttps%253A%252F%252Fwww.sn.at%252Fleben%252Fgesundheit%252Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+                <path d="m365 279 14-90h-86v-58c0-25 12-48 51-48h39V6s-36-6-70-6c-71 0-117 43-117 121v68h-79v90h79v221h97V279h72Z" />
+              </svg>
+            </a>
+            <a
+              class="frcc toolbarBtn shareLink"
+              style="background-color: #000000"
+              target="_blank"
+              href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fwww.opengraph.xyz%2Furl%2Fhttps%253A%252F%252Fwww.sn.at%252Fleben%252Fgesundheit%252Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227">
+                <path d="M714 519 1161 0h-106L667 451 357 0H0l468 682L0 1226h106l409-476 328 476h357L714 519ZM569 688l-47-68L144 80h163l304 436 48 68 396 566H892L569 688Z" />
+              </svg>
+            </a>
+            <a
+              class="frcc toolbarBtn shareLink"
+              style="background-color: #0358a9"
+              target="_self"
+              href="mailto:?subject=SCHWIMMA%20OIDA%20&body=https%3A%2F%2Fwww.opengraph.xyz%2Furl%2Fhttps%253A%252F%252Fwww.sn.at%252Fleben%252Fgesundheit%252Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.29 75.29">
+                <path
+                  d="M66.1 12.09H9.2a9.2 9.2 0 0 0-9.2 9.2V54a9.2 9.2 0 0 0 9.2 9.2h56.9a9.2 9.2 0 0 0 9.2-9.2V21.29a9.2 9.2 0 0 0-9.2-9.2zm-4.5 6L37.65 33.52 13.69 18.1H61.6zm4.5 39.12H9.2A3.2 3.2 0 0 1 6 54V21.46l29.8 19.16.12.06.13.07c.23.12.47.22.71.28.03 0 .05 0 .08.02.27.06.54.1.8.1h.01c.27 0 .54-.04.8-.1l.08-.02a3.48 3.48 0 0 0 .85-.35l.12-.06 29.8-19.16V54a3.2 3.2 0 0 1-3.2 3.2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="articleText">
+          <p>
+            Es muss nicht gleich die Seedurchquerung sein. Doch regelmäßig ein paar Bahnen zu schwimmen, egal ob im See oder einem Frei- oder Hallenbad, ist ein umfassendes und optimales
+            <span class="glossarCont">
+              <span class="glossarWord" aria-describedby="glossarTooltip69420">Work-out</span>
+              <span id="glossarTooltip69420" class="fcfsc glossarTooltip" role="tooltip">
+                <span class="glossarTooltipIndicator"></span>
+                <span class="frcfs glossarLautschrift">
+                  <button class="frcc glossarAudioBtn" type="button">
+                    <audio>
+                      <source src="./static/assets/glossar69420.mp3" type="audio/mpeg" />
+                    </audio>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path d="M15 24v-3s6-2 6-9-6-9-6-9V0s9 2 9 12-9 12-9 12ZM0 16V8h5l7-7v22l-7-7H0Zm15 1V7s3 1 3 5-3 5-3 5Z" />
+                    </svg>
+                  </button>
+                  <span>[&#x2C8;w&oelig;&#x2D0;&#x250;&#x32F;k&#x294;a&#x28A;&#x32F;t]</span>
+                </span>
+                <span class="glossarBedeutung">sportliche Übung zur Steigerung der körperlichen Leistungs&shy;fähigkeit;<br />intensives [Fitness]training;</span>
+              </span>
+            </span>
+            für Körper und Geist in jedem Alter.
+          </p>
+          <h3>Schwimmen ist mehr als nur Abkühlung</h3>
+          <p>
+            Schwimmen ist weit mehr als nur eine angenehme Freizeitbeschäftigung oder eine Möglichkeit, sich
+            <a class="articleTextLink" title="Die zehn goldenen Tipps, wenn's so richtig heiß ist" href="https://www.sn.at/leben/lifestyle/die-zehn-goldenen-tipps-wenns-so-richtig-heiss-ist-30451048" target="_blank"
+              >an heißen Sommertagen abzukühlen</a
+            >. Diese umfassende und schonende Sportart bringt eine Vielzahl gesundheitlicher Vorteile mit sich. Nahezu alle Muskelgruppen des Körpers werden beim Schwimmen beansprucht. Durch verschiedene
+            <a class="articleTextLink" title="Warum Schwimmen gut für uns ist" href="https://www.sn.at/leben/warum-schwimmen-gut-fuer-uns-ist-139898533" target="_blank">Techniken</a> lassen sich sogar die kleinen Muskeln trainieren, und zwar ohne die
+            Gelenke zu belasten. Durch den Auftrieb im Wasser fühlt sich unser Körper federleicht an. Also ist Schwimmen die ideale Sportart für Menschen mit Gelenksproblemen, Arthritis oder Übergewicht. Zum Muskelaufbau kommt auch ein
+            ausgezeichnetes Herz-Kreislauf-Training hinzu. Wer regelmäßig schwimmt, stärkt sein Herz und verbessert zudem die Kapazität seiner Lungen.
+          </p>
+          <p>Denn nicht nur Arm- und Beinbewegungen müssen kontrolliert werden, sondern auch die Atmung fordert eine besondere Beachtung ein. Verlängerte Ausatemphasen lassen die Lungen mehr Luft aufnehmen und stärken die Atemmuskulatur.</p>
+          <h3>Kalorien verbrennen ohne schwitzen</h3>
+          <p>
+            Schwimmen ist eine effektive Methode,
+            <a
+              class="articleTextLink"
+              title="Wie viele Kalorien verbrennt man beim Putzen, Kochen und Co.? Fit durch Hausarbeit!"
+              href="https://www.sn.at/leben/lifestyle/wie-viele-kalorien-verbrennt-man-beim-putzen-kochen-und-co-fit-durch-hausarbeit-85366192"
+              target="_blank"
+              >Kalorien zu verbrennen</a
+            >, und das ohne zu schwitzen. Abhängig von der Intensität und dem Schwimmstil, können
+            <a class="articleTextLink" title="Wie man mit Sport richtig abnimmt" href="https://www.sn.at/leben/gesundheit/wie-man-mit-sport-richtig-abnimmt-69657535" target="_blank">500 bis 700 Kalorien pro Stunde verbrannt</a>
+            werden. Dies hilft nicht nur beim Abnehmen, sondern auch beim Aufbau und Erhalt einer gesunden Körperzusammensetzung.
+          </p>
+          <h3>Das macht Schwimmen für die Seele</h3>
+          <p>
+            Wie ein Fisch ruhig im eigenen Rhythmus durch das Wasser zu gleiten, hat etwas Meditatives. Durch die Konzentration auf die eigene Atmung kommt der Geist zur Ruhe, Stress und emotionale Spannungen können im wahrsten Sinne des Wortes
+            davonfließen. Ohne Lotussitz, dafür mit Froschbeinbewegung. Die erholsame Nachtruhe lässt nach einem ausgiebigen Badeerlebnis auch meist nicht lang auf sich warten. Fröhliche Fische in allen Größen
+          </p>
+          <h3>Glücklicher durch Schwimmen?</h3>
+          <p>Studien belegen, dass leidenschaftliche Schwimmer weniger an Depressionen und Ängsten leiden und besser gelaunt sind. Das liegt an den Endorphinen, die während eines Schwimm-Work-outs ausgeschüttet werden.</p>
+          <p>
+            Und das kann man sich in jedem Alter zunutze machen. Kindern und Jugendlichen bietet das Schwimmen eine großartige Möglichkeit, ihre motorischen Fähigkeiten zu entwickeln, und schwimmen können ist als lebensrettende Fähigkeit für jeden
+            unerlässlich. Für Erwachsene ist der Schwimmsport eine willkommene Abwechslung zu traditionellen Fitnessaktivitäten und eine ideale Sportart für Menschen, die aufgrund von Verletzungen oder Gelenksproblemen andere Formen von Bewegung
+            vermeiden müssen. Ältere Menschen profitieren oft besonders wegen der gelenkschonenden Bewegung vom Schwimmen und können schonend Muskelkraft und Beweglichkeit erhalten. Spezielle Wassergymnastik und Aquakurse bieten gerade für Senioren
+            eine effektive Möglichkeit, aktiv zu bleiben.
+          </p>
+          <p>Egal ob Jung oder Alt, Anfänger oder Profi - Schwimmen ist eine ideale Möglichkeit, gesund und aktiv zu bleiben. Also nichts wie rein ins kühle und gesunde Nass. Möglichkeiten dazu gibt es in unserer Region ja tatsächlich genug.</p>
+        </div>
+      </div>
+    </article>
+    <div id="commentSection" class="commentSectionCont">
+      <h2 class="commentsHeadline">Kommentare</h2>
+      <div class="frfsc newCommentCont">
+        <img class="newCommentContAvatar" src="./static/assets/authorImage.jpg" />
+        <form class="fcfefs newCommentForm" name="commentForm" action="">
+          <textarea class="newCommentInput" placeholder="Kommentieren..." rows="3"></textarea>
+          <button class="btn" type="submit">Senden</button>
+        </form>
+      </div>
+      <div class="fcfsc commentList">
+        <div class="frfsc commentListItem">
+          <img class="commentListItemAvatar" src="./static/assets/user2.jpg" />
+          <div class="fcfsc commentListItemBubble">
+            <div class="frcfs commentListItemHeader">
+              <p class="commentListItemName">Sarah Smith</p>
+              <p class="commentListItemTime">vor 3 Tagen</p>
+            </div>
+            <p class="commentListItemText">Mit ein paar Punkten nicht ganz einverstanden, aber insgesamt ein guter Artikel.</p>
+          </div>
+        </div>
+        <div class="frfsc commentListItem">
+          <img class="commentListItemAvatar" src="./static/assets/authorImage.jpg" />
+          <div class="fcfsc commentListItemBubble">
+            <div class="frcfs commentListItemHeader">
+              <p class="commentListItemName">Marie Musterfrau</p>
+              <p class="commentListItemExtra">Autor</p>
+              <p class="commentListItemTime">vor 2 Wochen</p>
+            </div>
+            <p class="commentListItemText"><b>@John Doe</b> Vielen Dank für die Anmerkung!<br />Hab ich im Artikel geändert.</p>
+          </div>
+        </div>
+        <div class="frfsc commentListItem">
+          <img class="commentListItemAvatar" src="./static/assets/user1.jpg" />
+          <div class="fcfsc commentListItemBubble">
+            <div class="frcfs commentListItemHeader">
+              <p class="commentListItemName">John Doe</p>
+              <p class="commentListItemTime">vor 2 Wochen</p>
+            </div>
+            <p class="commentListItemText">Hi Marie!<br />Guter Artikel, es ist mir nur ein kleiner Tippfehler im Absatz &quot;Kalorien verbrennen ohne schwitzen&quot; aufgefallen. Da steht &quot;Schwimmsitl&quot; statt &quot;Schwimmstil&quot;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <nav class="sitemapNav" aria-label="sitemap">
+        <a href="/" class="logoLink">
+          <svg class="longLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850.4 107.7">
+            <g fill="var(--accentColor)">
+              <path
+                d="M203.8 79.7V27.4L190 19.2l-9.7 9V5.1l-9 3.5-5-1.3V80l14.3 10 23.2-10.3Zm-13.9-2.3-9.6-4V33.9l9.6 4.7v38.8Zm568.7-55.7h11.6l-7.4 12.8h-4.2v38.8l7.1 5.2-9.5 11.7-11.7-7.2V34.4h-4.3l18.4-22.5v9.8zm-113.2.5 9.4-3.3.1 57.4 4.4 3.4-10.2 10.9-8.6-7.4V19.5l4.9 2.7zm8.2-17.5-7.4 11.7-3.6 1.9 3.6-13.6h7.4zM468.4 10v66.3l6.8 3.4-8.1 10.4-13-6.5v-64l-8.5-4.3v73.3H443V6.7h2.6v4.5L456.7 0l11.7 10zM430 0l10.2 6.9V90l-10.1-3.5-3.9 1V15.8l-7.5-5.5L430 0zm-57 42-13.3-23L341 33.7v46L362.2 90l9.3-12.9-1.8-1.3-2.5 3.6L355 73V56.4l18.1-14.3Zm-10 5.4-8 6.2v-19l8 12.7Zm-31.7 42.4V29.7l-19.7-10.4L293.8 34v48.4l11.5 7.3 12-9v13l-14.6-.8-8.4 11.6 1.8 1.3 2.3-3.2 20 5 12.9-17.9Zm-14-12.4-9.6-4V33.9l9.6 4.8v38.7ZM266 19.5l5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6.1 3.2-7.5 10.5-13.1-6.5.1-50.8-4.6-2 6.5-11zM123.4 5.1v71.2l4.2 3.1-8.1 10.8-10.2-7.2V7.3l5.1 1.3 9-3.5zM104 79.7l-5.4-3.4V29.7L78.8 19.3 60.8 34v47.4l11.4 8.7 12-10.8v3.9l12 6.8 7.8-10.3Zm-19.5-2.5-9.4-3.8V34l9.4 4.8v38.5ZM61.3 6.4l-1.8-1.3L4 81.6 5.8 83l4.1-5.7L32.8 90l18.6-15V42.7l-12-6L61.2 6.4Zm-24 66.8-17.6-9 9.8-13.6 7.8 4.1v18.5Zm20-69.8L55.5 2 49 11 32.2 0 11.5 14.3v27.6l11.1 5.3L0 78.7 1.9 80 57.3 3.4ZM40.2 22.5l-7.4 10.9-7.5-4V15l14.9 7.5Zm482.4 57.2-5.4-3.4V29.7l-19.6-10.4L479.5 34v47.4l11.3 8.7 12-10.8v3.9l12 6.8 7.9-10.3ZM503.1 77l-9.4-3.7V34l9.4 4.7V77Zm319.3-57.9v9.3l12.3-9.5L846.2 30l-.1 46.3 4.3 2.8-7.9 11.4-10.3-7.3.1-43.8-9.9-5.5v42.4l4.3 3.1-8.2 10.8-10.1-7V19.5l4.6 2.7 9.4-3.1zm-249.5-14v23.3l12.2-8.9 11.6 10.6-.1 46.2 4.2 2.8-7.8 11.4-10.3-7.3.1-44-9.9-5.3v42.4l4.3 3.1-8.2 10.8-10.2-7V7.3l5.1 1.4 9-3.6z" />
+              <path
+                d="m544.4 19.4 17.7 10-8.8 10.3-11-5.9v39.5l10.4 6.2 2.6-3.6 1.8 1.3-9.4 13-19.6-10.3V33.6l16.3-14.2zm-164.2.1 5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6 3.2-7.5 10.5-13.1-6.5.1-50.6-4.5-2.2 6.5-11zm-239.5-.3 17.4 8.4-9.3 11.4 8.1 7v45.3l-16.6 10.5-11.1-7.9 6.9-9.1L143 88V50.7l-9.2-6.4 8.9-9.3-12.6-6.7 10.6-9.1zm79 .5 9.1 6.3v47.2l9.7 4.2V34.8l-3.5-3.5 10.9-11.6 6.8 5.8v50.7l5.2 3.3-8.2 10.5-8.4-5.5-11.7 5.5-14.8-10.5V34.8a69 69 0 0 1-4.6-4.6l9.5-10.5Zm391.1-.2 5.1 5.4 14.3-6 8.7 11-9.5 7.6-6.1-3.6v42.2l6.1 3.2-7.6 10.5-13.1-6.5.2-50.8-4.6-2 6.5-11zM803.3 42l-13.4-23-18.7 14.6v46L792.4 90l9.3-12.9-1.8-1.3-2.5 3.6-12.2-6.4V56.4l18-14.3Zm-10 5.4-8 6.2v-19l8 12.7ZM709.4 5.1v23.3l12.2-8.9 11.6 10.6-.1 46.2 4.3 2.8-7.9 11.4-10.3-7.3.1-44-9.9-5.3v42.4l4.3 3.1-8.2 10.8-10.1-7V7.3l5.1 1.4 8.9-3.6z" />
+              <path d="m680.9 19.4 17.8 10-8.9 10.3-11-5.9v39.5l10.4 6.2 2.7-3.6 1.7 1.3-9.4 13-19.5-10.3V33.6l16.2-14.2z" />
+            </g>
+          </svg>
+        </a>
+        <ul class="gridSalzburg">
+          <li class="bold"><a href="#">Salzburg</a></li>
+          <li><a href="#">Politik</a></li>
+          <li><a href="#">Wirtschaft</a></li>
+          <li><a href="#">Chronik</a></li>
+          <li><a href="#">Kultur</a></li>
+          <li><a href="#">Regionalsport</a></li>
+          <li><a href="#">Aktiv</a></li>
+          <li><a href="#">Leben</a></li>
+          <li><a href="#">Wetter</a></li>
+          <li><a href="#">Verkehr</a></li>
+          <li><a href="#">Fotoblogs</a></li>
+          <li><a href="#">Geburten</a></li>
+          <li><a href="#">Trauer</a></li>
+          <li><a href="#">Salzburgwiki</a></li>
+          <li><a href="#">Wizany</a></li>
+        </ul>
+        <ul class="gridPolitik">
+          <li class="bold"><a href="#">Politik</a></li>
+          <li><a href="#">Innenpolitik</a></li>
+          <li><a href="#">Weltpolitik</a></li>
+        </ul>
+        <ul class="gridChronik">
+          <li class="bold"><a href="#">Chronik</a></li>
+          <li><a href="#">Österreich</a></li>
+          <li><a href="#">International</a></li>
+          <li><a href="#">Medien</a></li>
+          <li><a href="#">Wissen</a></li>
+          <li><a href="#">Kinder</a></li>
+          <li><a href="#">Klimawandel</a></li>
+          <li><a href="#">Sachbuch</a></li>
+        </ul>
+        <ul class="gridSport">
+          <li class="bold"><a href="#">Sport</a></li>
+          <li><a href="#">Fußball</a></li>
+          <li><a href="#">Eishockey</a></li>
+          <li><a href="#">Motorsport</a></li>
+          <li><a href="#">Wintersport</a></li>
+          <li><a href="#">Tennis</a></li>
+          <li><a href="#">Mixed</a></li>
+        </ul>
+        <ul class="gridKarriere">
+          <li class="bold"><a href="#">Karriere</a></li>
+          <li><a href="#">Jobs in Salzburg</a></li>
+          <li><a href="#">Karriere-Blog</a></li>
+        </ul>
+        <ul class="gridDigitalabo">
+          <li class="bold"><a href="#">SN-Digitalabo</a></li>
+          <li class="bold"><a href="#">Abo</a></li>
+          <li class="bold"><a href="#">SN-Archiv</a></li>
+          <li class="bold"><a href="#">SN-Card</a></li>
+          <li class="bold"><a href="#">SN-Shop</a></li>
+          <li class="bold"><a href="#">Newsletter</a></li>
+        </ul>
+        <ul class="gridBriefe">
+          <li class="bold"><a href="#">Briefe an die SN</a></li>
+          <li class="bold"><a href="#">Video</a></li>
+          <li class="bold"><a href="#">SNin</a></li>
+        </ul>
+        <ul class="gridWirtschaft">
+          <li class="bold"><a href="#">Wirtschaft</a></li>
+          <li><a href="#">Österreich</a></li>
+          <li><a href="#">Welt</a></li>
+          <li><a href="#">Salzburg</a></li>
+        </ul>
+        <ul class="gridLeben">
+          <li class="bold"><a href="#">Leben</a></li>
+          <li><a href="#">Gesundheit</a></li>
+          <li><a href="#">Reisen</a></li>
+          <li><a href="#">Karriere</a></li>
+          <li><a href="#">Wohnen</a></li>
+          <li><a href="#">Mobilität</a></li>
+          <li><a href="#">Themenwelten</a></li>
+        </ul>
+        <ul class="gridWochenende">
+          <li class="bold"><a href="#">Wochenende</a></li>
+          <li class="bold"><a href="#">Quiz</a></li>
+        </ul>
+        <ul class="gridImmobilien">
+          <li class="bold"><a href="#">Immobilien</a></li>
+          <li><a href="#">Mieten in Salzburg</a></li>
+          <li><a href="#">Kaufen in Salzburg</a></li>
+          <li><a href="#">Immobilien-Blog</a></li>
+        </ul>
+        <ul class="gridWir">
+          <li class="bold"><a href="#">Wir, die SN</a></li>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Karriere bei den SN</a></li>
+          <li><a href="#">SN Saal</a></li>
+        </ul>
+        <ul class="gridKultur">
+          <li class="bold"><a href="#">Kultur</a></li>
+          <li><a href="#">Theater</a></li>
+          <li><a href="#">Musik</a></li>
+          <li><a href="#">Kunst</a></li>
+          <li><a href="#">Kino</a></li>
+          <li><a href="#">Literatur</a></li>
+          <li><a href="#">Salzburger Festspiele</a></li>
+          <li><a href="#">Pfingstfestspiele</a></li>
+          <li><a href="#">Osterfestspiele</a></li>
+        </ul>
+        <ul class="gridFreizeit">
+          <li class="bold"><a href="#">Freizeit</a></li>
+          <li><a href="#">Gewinnspiele</a></li>
+          <li><a href="#">Denkspiele</a></li>
+          <li><a href="#">Horoskop</a></li>
+          <li><a href="#">TV-Programm/Tele</a></li>
+          <li><a href="#">Partnersuche</a></li>
+          <li><a href="#">Sprachkurse</a></li>
+        </ul>
+        <ul class="gridUnternehmen">
+          <li class="bold"><a href="#">Unternehmen</a></li>
+          <li><a href="#">Salzburger Verlagshaus</a></li>
+          <li><a href="#">Druckzentrum Salzburg</a></li>
+          <li><a href="#">Salzburg Logistik</a></li>
+          <li><a href="#">Conova</a></li>
+        </ul>
+        <ul class="gridWerbung">
+          <li class="bold"><a href="#">Werbung</a></li>
+          <li><a href="#">Printwerbung</a></li>
+          <li><a href="#">Online-Werbung</a></li>
+          <li><a href="#">Besondere Werbeformen</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+        <ul class="gridKundenservice">
+          <li class="bold"><a href="#">Kundenservice</a></li>
+        </ul>
+      </nav>
+      <div class="agbCont">
+        <p>@ 1997 - 2024 Salzburger Nachrichten Medien GmbH &amp; Co. KG</p>
+        <nav class="frcc agbNav">
+          <a class="agbNavLink" href="#">AGB</a>
+          <a class="agbNavLink" href="#">Datenschutz</a>
+          <a class="agbNavLink" href="#">Cookie-Policy</a>
+          <a class="agbNavLink" href="#">Cookie-Einstellungen</a>
+          <a class="agbNavLink" href="#">Impressum</a>
+          <a class="agbNavLink" href="#">Kontakt</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
