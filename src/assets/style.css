@@ -574,7 +574,7 @@
   .articleImage {
     margin-bottom: calc(var(--headlineSize) * 0.5);
     width: var(--articleWidth);
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
   }
 
@@ -885,6 +885,33 @@
 
       @media screen and (width >= 768px) {
         font-size: 1.25rem;
+      }
+
+      &.vorspann {
+        margin-bottom: 2.5em;
+        padding: 0 0.5em;
+        position: relative;
+        color: var(--fgColor2);
+        font-size: 1.25rem;
+        @media screen and (min-width: 768px) {
+          padding: 0 1.5em;
+        }
+
+        &::before,
+        &::after {
+          position: absolute;
+          color: inherit;
+          font-size: inherit;
+        }
+
+        &::before {
+          content: open-quote;
+          transform: translateX(-100%);
+        }
+        &::after {
+          content: close-quote;
+          transform: translateX(0);
+        }
       }
     }
 
