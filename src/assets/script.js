@@ -1,20 +1,19 @@
 "use strict";
 
-// TODO: switch those 2 fuckers between dev env and stupid work pc
 import Sortable from "sortablejs/modular/sortable.core.esm";
-// import Sortable from "../../node_modules/sortablejs/modular/sortable.core.esm.js";
 
 /////////
 // EVENTS
 
 // LOAD
 window.addEventListener("DOMContentLoaded", (event) => {
-  positionTooltips();
+  positionTooltips(".glossarTooltip", ".glossarTooltipIndicator");
 });
 
 // RESIZE
 window.addEventListener("resize", (event) => {
-  positionTooltips();
+  setReadingProgress(".readingProgress", "h1.articleHeadline ~ .articleBody");
+  positionTooltips(".glossarTooltip", ".glossarTooltipIndicator");
 });
 
 // SCROLL
@@ -23,6 +22,7 @@ document.addEventListener("scroll", (event) => {
   if (lastScrollPos < window.scrollY) document.querySelector(".mainHeader").classList.add("hide");
   if (lastScrollPos > window.scrollY) document.querySelector(".mainHeader").classList.remove("hide");
   lastScrollPos = window.scrollY;
+  setReadingProgress(".readingProgress", "h1.articleHeadline ~ .articleBody");
 });
 
 // ACCOUNT BUTTON
@@ -36,7 +36,6 @@ accountMenuEditBtn.addEventListener("click", (event) => {
 accountMenuEditBtn.addEventListener(
   "click",
   (event) => {
-    console.log("init sortable");
     Sortable.create(document.querySelector(".accountMenuSortable"), {
       animation: 150,
       easing: "cubic-bezier(0.87, 0, 0.13, 1)",
@@ -86,8 +85,8 @@ document.querySelectorAll(".glossarAudioBtn").forEach((btn) => {
 // TOOLTIP
 /**
  * horizontally offsets the tooltips if they are outside of the body.
- * @param {string} tooltip - query selector for tooltip elements.
- * @param {string} indicator - query selector for indicator element. (has do be a child of tooltip)
+ * @param {string} tooltip - selector for tooltip elements.
+ * @param {string} indicator - selector for indicator element. (has do be a child of tooltip)
  * @example
  * positionTooltips(".tooltip", ".tooltipIndicator");
  */
@@ -112,5 +111,23 @@ function positionTooltips(tooltip = ".glossarTooltip", indicator = ".glossarTool
         indicatorEL.style.transform = `translateX(calc(-50% + ${offset}px))`;
       }
     });
+  }
+}
+// READING PROGRESS BAR
+/**
+ * sets the scaleX transform on a div based on the position of a measured element in the viewport.
+ * @param {string} targetEl - selector for element that gets the scaleX transform.
+ * @param {string} measuredEl - selector for measured element.
+ * @example
+ * setReadingProgress(".progressBar", ".articleBodyText");
+ */
+function setReadingProgress(targetEl = ".readingProgress", measuredEl = "h1.articleHeadline ~ .articleBody") {
+  const readingProgressEl = document?.querySelector(targetEl);
+  const articleBodyEl = document?.querySelector(measuredEl);
+  if (readingProgressEl && articleBodyEl) {
+    const halfWindowHeight = window.innerHeight >> 1;
+    const articleBodyRect = articleBodyEl.getBoundingClientRect();
+    const progress = Math.min(Math.max((articleBodyRect.top * -1 + halfWindowHeight) / (articleBodyRect.height - halfWindowHeight), 0), 1);
+    readingProgressEl.style.transform = `scaleX(${progress})`;
   }
 }
