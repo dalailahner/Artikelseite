@@ -10,7 +10,9 @@
   --bgColor2: #f0f8ff;
   --bgColor3: #cde;
   --lato: Lato, Avenir, "Adobe Heiti Std", "Segoe UI", "Trebuchet MS", sans-serif;
+  --jumpToArticleOffset: 1.5rem;
   --headerHeight: 4rem;
+  --readingProgressHeight: 5px;
   --pageWidth: 1032px;
   --mainGap: 1.25rem;
   --articleWidth: min(100%, 680px);
@@ -167,18 +169,17 @@ body {
 }
 
 .jumpToArticleLink {
-  --offset: 1.5rem;
   padding: 0.5em 1em;
   position: fixed;
-  top: calc(var(--offset) + var(--headerHeight));
-  left: var(--offset);
+  top: calc(var(--jumpToArticleOffset) + var(--headerHeight));
+  left: var(--jumpToArticleOffset);
   color: var(--accentColor);
   font-weight: 700;
   text-decoration: none;
   border: 2px solid var(--accentColor);
   border-radius: 3px;
   background-color: var(--bgColor1);
-  transform: translateY(calc(-100% - var(--offset) - var(--headerHeight)));
+  transform: translateY(calc(-100% - var(--jumpToArticleOffset) - var(--headerHeight)));
   transition: transform 0.2s ease;
 
   &:focus {
@@ -189,7 +190,7 @@ body {
 /* HEADER */
 .mainHeader {
   width: 100%;
-  height: var(--headerHeight);
+  height: calc(var(--headerHeight) + var(--readingProgressHeight));
   position: fixed;
   top: 0;
   left: 0;
@@ -200,13 +201,13 @@ body {
   z-index: 100;
 
   &.hide {
-    transform: translateY(-100%);
+    transform: translateY(calc(var(--headerHeight) * -1));
   }
 }
 .headerNav {
   padding: calc(var(--headerHeight) * 0.2) 0;
   width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
-  height: 100%;
+  height: calc(100% - var(--readingProgressHeight));
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   grid-template-areas: "snPlus logo menu";
@@ -236,15 +237,13 @@ body {
 }
 .headerNav .shortLogo {
   display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 .headerNav .longLogo {
   display: none;
-}
-@media screen and (min-width: 768px) {
-  .headerNav .shortLogo {
-    display: none;
-  }
-  .headerNav .longLogo {
+  @media screen and (min-width: 768px) {
     display: block;
   }
 }
@@ -445,6 +444,13 @@ a.accountMenuItem {
   }
 }
 
+.readingProgress {
+  width: 100%;
+  height: var(--readingProgressHeight);
+  background-color: var(--accentColor);
+  transform-origin: left;
+}
+
 /***********/
 /* ARTICLE */
 .aboveArticle {
@@ -500,10 +506,17 @@ article {
 }
 
 .articleImage {
-  margin-bottom: var(--headlineSize);
+  margin-bottom: calc(var(--headlineSize) * 0.5);
   width: var(--articleWidth);
   aspect-ratio: 2 / 1;
   object-fit: cover;
+}
+
+.articleReadingDuration {
+  margin-bottom: calc(var(--headlineSize) * 0.25);
+  color: var(--fgColor3);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .articleHeadline {

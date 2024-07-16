@@ -4,7 +4,6 @@ import browserslist from "browserslist";
 
 export default defineConfig({
   root: "./src",
-  base: "./",
   publicDir: "./static",
   css: {
     transformer: "lightningcss",
@@ -14,6 +13,7 @@ export default defineConfig({
   },
   server: {
     open: true,
+    watch: process.env?.WSL_DISTRO_NAME ? { usePolling: true } : undefined,
   },
   build: {
     cssMinify: "lightningcss",

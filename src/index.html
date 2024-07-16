@@ -11,9 +11,9 @@
   </head>
   <body>
     <a class="jumpToArticleLink" href="#articleStart">Zum Artikel springen</a>
-    <header class="frcc mainHeader">
+    <header class="fccfs mainHeader">
       <nav class="headerNav" aria-label="header">
-        <a class="snPlus" style="grid-area: snPlus" href="#"><img src="./static/assets/SNplus.svg" alt="SN Plus" /></a>
+        <a class="snPlus" style="grid-area: snPlus" href="#"><img src="/assets/SNplus.svg" alt="SN Plus" /></a>
         <div class="frcc logoCont" style="grid-area: logo">
           <svg class="logo shortLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048">
             <path
@@ -122,6 +122,7 @@
           </div>
         </div>
       </nav>
+      <div class="readingProgress" style="transform: scaleX(0)"></div>
     </header>
     <article class="fccfs">
       <div class="aboveArticle">
@@ -133,17 +134,18 @@
           <a class="breadcrumb" href="#">Gesundheit</a>
         </nav>
         <div class="frcfe aboveArticleTags">
-          <a href="#"><img class="aboveArticleTag" src="./static/assets/Live.svg" alt="Live" /></a>
-          <a href="#"><img class="aboveArticleTag" src="./static/assets/SNplus.svg" alt="SN Plus" /></a>
+          <a href="#"><img class="aboveArticleTag" src="/assets/Live.svg" alt="Live" /></a>
+          <a href="#"><img class="aboveArticleTag" src="/assets/SNplus.svg" alt="SN Plus" /></a>
         </div>
       </div>
       <img class="articleImage" alt="Person schwimmt in See" src="https://unsplash.com/photos/E9PJO_vL3E8/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8c3dpbW1pbmd8ZGV8MHx8fHwxNzE4MTI0NDg0fDA&force=true&w=680" />
+      <p class="articleReadingDuration">Lesedauer: 3 Minuten</p>
       <h1 id="articleStart" class="articleHeadline">Darum macht Schwimmen fit und glücklich</h1>
       <p class="articleDate">
         <time datetime="2023-11-30T16:59+0200">Donnerstag 16:59, <wbr />30. November 2023</time>
       </p>
       <div class="frcc authorCont">
-        <img class="authorImg" src="./static/assets/authorImage.jpg" alt="Marie Musterfrau" draggable="false" />
+        <img class="authorImg" src="/assets/authorImage.jpg" alt="Marie Musterfrau" draggable="false" />
         <div class="fcfsc authorDetails">
           <div class="frcfs authorNameCont">
             <a class="authorName" href="#">Marie Musterfrau</a>
@@ -241,7 +243,7 @@
                 <span class="frcfs glossarLautschrift">
                   <button class="frcc glossarAudioBtn" type="button">
                     <audio>
-                      <source src="./static/assets/glossar69420.mp3" type="audio/mpeg" />
+                      <source src="/assets/glossar69420.mp3" type="audio/mpeg" />
                     </audio>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                       <path d="M15 24v-3s6-2 6-9-6-9-6-9V0s9 2 9 12-9 12-9 12ZM0 16V8h5l7-7v22l-7-7H0Zm15 1V7s3 1 3 5-3 5-3 5Z" />
@@ -305,7 +307,7 @@
     <div id="commentSection" class="commentSectionCont">
       <h2 class="commentsHeadline">Kommentare</h2>
       <div class="frfsc newCommentCont">
-        <img class="newCommentContAvatar" src="./static/assets/authorImage.jpg" />
+        <img class="newCommentContAvatar" src="/assets/authorImage.jpg" />
         <form class="fcfefs newCommentForm" name="commentForm" action="">
           <textarea class="newCommentInput" placeholder="Kommentieren..." rows="3"></textarea>
           <button class="btn" type="submit">Senden</button>
@@ -313,7 +315,7 @@
       </div>
       <div class="fcfsc commentList">
         <div class="frfsc commentListItem">
-          <img class="commentListItemAvatar" src="./static/assets/user2.jpg" />
+          <img class="commentListItemAvatar" src="/assets/user2.jpg" />
           <div class="fcfsc commentListItemBubble">
             <div class="frcfs commentListItemHeader">
               <p class="commentListItemName">Sarah Smith</p>
@@ -323,7 +325,7 @@
           </div>
         </div>
         <div class="frfsc commentListItem">
-          <img class="commentListItemAvatar" src="./static/assets/authorImage.jpg" />
+          <img class="commentListItemAvatar" src="/assets/authorImage.jpg" />
           <div class="fcfsc commentListItemBubble">
             <div class="frcfs commentListItemHeader">
               <p class="commentListItemName">Marie Musterfrau</p>
@@ -334,7 +336,7 @@
           </div>
         </div>
         <div class="frfsc commentListItem">
-          <img class="commentListItemAvatar" src="./static/assets/user1.jpg" />
+          <img class="commentListItemAvatar" src="/assets/user1.jpg" />
           <div class="fcfsc commentListItemBubble">
             <div class="frcfs commentListItemHeader">
               <p class="commentListItemName">John Doe</p>
