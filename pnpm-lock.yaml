@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      noicss.reset:
+        specifier: ^1.0.3
+        version: 1.0.3
       sortablejs:
         specifier: ^1.15.3
         version: 1.15.3
@@ -347,6 +350,9 @@ packages:
   node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
 
+  noicss.reset@1.0.3:
+    resolution: {integrity: sha512-KnrWLANmK2skw6MhH8X1Y3yQEaF6RMvzAnD//8oK3WHWDDY8yVR5ztSa7c8O8tl9H/cuaLvXggJScK0obWIVaA==}
+
   picocolors@1.1.0:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
@@ -616,6 +622,8 @@ snapshots:
   nanoid@3.3.7: {}
 
   node-releases@2.0.18: {}
+
+  noicss.reset@1.0.3: {}
 
   picocolors@1.1.0: {}
 
