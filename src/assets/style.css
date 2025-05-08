@@ -893,7 +893,8 @@
         position: relative;
         color: var(--fgColor2);
         font-size: 1.25rem;
-        @media screen and (min-width: 768px) {
+
+        @media screen and (width >= 768px) {
           padding: 0 1.5em;
         }
 
