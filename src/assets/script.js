@@ -1,5 +1,3 @@
-"use strict";
-
 import Sortable from "sortablejs/modular/sortable.core.esm";
 
 /////////
@@ -29,8 +27,8 @@ document.addEventListener("scroll", (event) => {
 const accountMenuEditBtn = document.querySelector(".accountMenuEditBtn");
 
 accountMenuEditBtn.addEventListener("click", (event) => {
-  const inEditMode = event.target.closest(".accountMenu").dataset.edit === "true" ? true : false;
-  event.target.closest(".accountMenu").dataset.edit = !inEditMode;
+  const inEditMode = event.currentTarget.closest(".accountMenu").dataset.edit === "true";
+  event.currentTarget.closest(".accountMenu").dataset.edit = !inEditMode;
 });
 
 accountMenuEditBtn.addEventListener(
@@ -44,20 +42,20 @@ accountMenuEditBtn.addEventListener(
       ghostClass: "sortableGhost",
     });
   },
-  { once: true }
+  { once: true },
 );
 
 // FOLLOW AUTHOR BUTTON
 document.querySelector(".followAuthorBtn").addEventListener("click", (event) => {
-  const isFollowing = event.target.dataset?.followed === "true" ? true : false;
-  event.target.dataset.followed = isFollowing ? false : true;
-  event.target.innerText = isFollowing ? "Folgen" : "gefolgt";
+  const isFollowing = event.currentTarget.dataset?.followed === "true";
+  event.currentTarget.dataset.followed = !isFollowing;
+  event.currentTarget.innerText = isFollowing ? "Folgen" : "gefolgt";
 });
 
 // TOOLBAR CLASS TOGGLE
-document.querySelectorAll(".toolbarBtn").forEach((btn) => {
+for (const btn of document.querySelectorAll(".toolbarBtn")) {
   btn.addEventListener("click", (ev) => {
-    if (ev.target.classList.contains("share")) {
+    if (ev.currentTarget.classList.contains("share")) {
       // use native device share if mobile/tablet
       if (navigator.userAgent.includes("Mobi") || window.matchMedia("(pointer: coarse)").matches) {
         navigator.share({
@@ -68,16 +66,19 @@ document.querySelectorAll(".toolbarBtn").forEach((btn) => {
         return;
       }
     }
-    ev.target.classList.toggle("active");
+
+    if (!ev.currentTarget.classList.contains("shareLink")) {
+      ev.currentTarget.classList.toggle("active");
+    }
   });
-});
+}
 
 // GLOSSAR AUDIO BTN
-document.querySelectorAll(".glossarAudioBtn").forEach((btn) => {
+for (const btn of document.querySelectorAll(".glossarAudioBtn")) {
   btn.addEventListener("click", (event) => {
-    event.target.querySelector("audio").play();
+    event.currentTarget.querySelector("audio").play();
   });
-});
+}
 
 ////////////
 // FUNCTIONS
@@ -91,8 +92,8 @@ document.querySelectorAll(".glossarAudioBtn").forEach((btn) => {
  * positionTooltips(".tooltip", ".tooltipIndicator");
  */
 function positionTooltips(tooltip = ".glossarTooltip", indicator = ".glossarTooltipIndicator") {
-  if (document.querySelectorAll(tooltip).length > 0) {
-    document.querySelectorAll(tooltip).forEach((tooltipEL) => {
+  if (document.querySelectorAll(tooltip)?.length > 0) {
+    for (const tooltipEL of document.querySelectorAll(tooltip)) {
       const indicatorEL = tooltipEL.querySelector(indicator);
 
       tooltipEL.style.transform = "translateX(-50%)";
@@ -110,7 +111,9 @@ function positionTooltips(tooltip = ".glossarTooltip", indicator = ".glossarTool
         tooltipEL.style.transform = `translateX(calc(-50% - ${offset}px))`;
         indicatorEL.style.transform = `translateX(calc(-50% + ${offset}px))`;
       }
-    });
+    }
+  } else {
+    console.warn(`positionTooltips() can't find any elements with selector "${tooltip}"`);
   }
 }
 // READING PROGRESS BAR
