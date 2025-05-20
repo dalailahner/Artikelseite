@@ -526,18 +526,6 @@
     }
   }
 
-  .aboveArticleTags {
-    gap: calc(var(--headlineSize) / 2);
-
-    & .aboveArticleTag {
-      display: flex;
-
-      & .aboveArticleTagImg {
-        height: 1.75em;
-      }
-    }
-  }
-
   article {
     padding-top: var(--headlineSize);
     width: min(100%, var(--pageWidth));
@@ -575,6 +563,23 @@
       margin-bottom: calc(var(--headlineSize) * 0.25);
       padding: 0;
       line-height: 1.125;
+    }
+  }
+
+  .articleLabels {
+    margin-bottom: calc(var(--headlineSize) * 0.5);
+    gap: calc(var(--headlineSize) / 2);
+
+    & .articleLabel {
+      display: flex;
+
+      & .articleLabelImg {
+        height: 1.25rem;
+
+        @media screen and (width >= 768px) {
+          height: 1.5rem;
+        }
+      }
     }
   }
 
