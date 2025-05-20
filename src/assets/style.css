@@ -586,15 +586,17 @@
 
   .articleHeadline {
     margin-bottom: calc(var(--headlineSize) * 0.5);
-    width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
+    padding: 0 var(--mainGap);
+    width: auto;
     font-size: var(--headlineSize);
     font-weight: 700;
     line-height: 1.125;
-    text-align: center;
+    text-align: left;
     text-wrap: pretty;
 
     @media screen and (width >= 768px) {
       margin-bottom: calc(var(--headlineSize) * 0.25);
+      padding: 0;
       line-height: 1.125;
     }
   }
