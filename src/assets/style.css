@@ -535,11 +535,25 @@
     }
   }
 
-  .articleImage {
-    margin-bottom: calc(var(--headlineSize) * 0.5);
+  .articleImageFigure {
+    margin-bottom: var(--headlineSize);
     width: var(--articleWidth);
+  }
+  .articleImage {
+    width: 100%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
+  }
+  .figcaption {
+    padding: 0.25em 0.25em 0;
+    width: 100%;
+    color: var(--fgColor3);
+    font-size: 1rem;
+    line-height: 1.333;
+
+    @media screen and (width >= 768px) {
+      padding: 0;
+    }
   }
 
   .articleBody {
