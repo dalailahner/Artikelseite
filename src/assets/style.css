@@ -21,11 +21,11 @@
     --pageWidth: 1032px;
     --mainGap: 1.25rem;
     --articleWidth: min(100%, 680px);
-    --headlineSize: 1.8rem;
+    --headlineSize: 1.5rem;
     --fullBorderRadius: calc(1px * infinity);
 
     @media screen and (width >= 768px) {
-      --headlineSize: 2.5rem;
+      --headlineSize: 1.8rem;
     }
   }
 
@@ -542,128 +542,6 @@
     object-fit: cover;
   }
 
-  .articleReadingDuration {
-    margin-bottom: calc(var(--headlineSize) * 0.25);
-    color: var(--fgColor3);
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .articleHeadline {
-    margin-bottom: calc(var(--headlineSize) * 0.5);
-    padding: 0 var(--mainGap);
-    width: auto;
-    font-size: var(--headlineSize);
-    font-weight: 700;
-    line-height: 1.125;
-    text-align: left;
-    text-wrap: pretty;
-
-    @media screen and (width >= 768px) {
-      margin-bottom: calc(var(--headlineSize) * 0.25);
-      padding: 0;
-      line-height: 1.125;
-    }
-  }
-
-  .articleLabels {
-    margin-bottom: calc(var(--headlineSize) * 0.5);
-    gap: calc(var(--headlineSize) / 2);
-
-    & .articleLabel {
-      display: flex;
-
-      & .articleLabelImg {
-        height: 1.25rem;
-
-        @media screen and (width >= 768px) {
-          height: 1.5rem;
-        }
-      }
-    }
-  }
-
-  .articleDate {
-    margin-bottom: var(--headlineSize);
-    width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
-    color: var(--fgColor3);
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: 0.75ch;
-    text-align: center;
-    text-transform: uppercase;
-    text-wrap: nowrap;
-
-    @media screen and (width >= 768px) {
-      margin-bottom: calc(var(--headlineSize) * 0.75);
-    }
-  }
-
-  .authorCont {
-    margin-bottom: var(--headlineSize);
-    width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
-    height: 60px;
-    gap: calc(var(--mainGap) * 0.5);
-    font-size: 1rem;
-  }
-  .authorImg {
-    height: 100%;
-    border: 2px solid var(--fgColor3);
-    border-radius: var(--fullBorderRadius);
-    user-select: none;
-  }
-  .authorDetails {
-    gap: calc(var(--mainGap) * 0.125);
-    line-height: 1;
-    text-decoration: none;
-  }
-  .authorNameCont {
-    gap: calc(var(--mainGap) * 0.25);
-  }
-  a.authorName {
-    color: var(--fgColor2);
-    font-size: 1.2em;
-    font-weight: 700;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .followAuthorBtn {
-    padding: 0.33em;
-    color: var(--accentColor);
-    border-radius: 3px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.2s ease;
-
-    @supports not (text-box: trim-both cap alphabetic) {
-      padding: 0.25em 0.33em;
-    }
-
-    @media print {
-      display: none;
-    }
-
-    &:hover {
-      color: var(--bgColor1);
-      background-color: var(--accentColor);
-    }
-  }
-  .authorRessorts {
-    gap: calc(var(--mainGap) * 0.5);
-    color: var(--fgColor3);
-
-    & a {
-      color: inherit;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
   .articleBody {
     margin-bottom: var(--headlineSize);
     width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
@@ -842,67 +720,163 @@
     }
   }
 
-  .articleText {
+  .articleContent {
     line-height: 1.666;
     text-align: left;
 
-    & p {
-      margin-bottom: 1.666em;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: 1.125rem;
-      font-weight: 400;
+    & .articleHeadline {
+      margin-bottom: var(--headlineSize);
+      width: auto;
+      font-size: var(--headlineSize);
+      font-weight: 700;
+      line-height: 1.333;
+      text-align: left;
+      text-wrap: pretty;
 
-      @media screen and (width >= 768px) {
-        font-size: 1.25rem;
+      & .articleLabel {
+        top: -0.25em;
+        font-size: inherit;
+
+        & .articleLabelImg {
+          height: 0.666em;
+        }
       }
+    }
 
-      &.vorspann {
-        margin-bottom: 2.5em;
-        padding: 0 0.5em;
-        position: relative;
+    & .articleDateAndDuration {
+      margin-bottom: var(--headlineSize);
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1em;
+      color: var(--fgColor3);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      text-wrap: nowrap;
+    }
+
+    & .authorCont {
+      margin-bottom: var(--headlineSize);
+      width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
+      height: 60px;
+      gap: calc(var(--mainGap) * 0.5);
+      font-size: 1rem;
+
+      & .authorImg {
+        height: 100%;
+        border: 2px solid var(--fgColor3);
+        border-radius: var(--fullBorderRadius);
+        user-select: none;
+      }
+      & .authorDetails {
+        gap: calc(var(--mainGap) * 0.125);
+        line-height: 1;
+        text-decoration: none;
+      }
+      & .authorNameCont {
+        gap: calc(var(--mainGap) * 0.25);
+      }
+      & a.authorName {
         color: var(--fgColor2);
-        font-size: 1.25rem;
+        font-size: 1.2em;
+        font-weight: 700;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      & .followAuthorBtn {
+        padding: 0.33em;
+        color: var(--accentColor);
+        border-radius: 3px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        @supports not (text-box: trim-both cap alphabetic) {
+          padding: 0.25em 0.33em;
+        }
+
+        @media print {
+          display: none;
+        }
+
+        &:hover {
+          color: var(--bgColor1);
+          background-color: var(--accentColor);
+        }
+      }
+      & .authorRessorts {
+        gap: calc(var(--mainGap) * 0.5);
+        color: var(--fgColor3);
+
+        & a {
+          color: inherit;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    & .vorspann {
+      margin-bottom: var(--headlineSize);
+      position: relative;
+      color: var(--fgColor2);
+      font-size: 1.125rem;
+
+      &::before,
+      &::after {
+        position: absolute;
+        color: inherit;
+        font-size: inherit;
+      }
+      &::before {
+        content: open-quote;
+        transform: translateX(-100%);
+      }
+      &::after {
+        content: close-quote;
+        transform: translateX(0);
+      }
+    }
+
+    & .articleText {
+      & p {
+        margin-bottom: 1.666em;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-size: 1.125rem;
+        font-weight: 400;
 
         @media screen and (width >= 768px) {
-          padding: 0 1.5em;
-        }
-
-        &::before,
-        &::after {
-          position: absolute;
-          color: inherit;
-          font-size: inherit;
-        }
-
-        &::before {
-          content: open-quote;
-          transform: translateX(-100%);
-        }
-        &::after {
-          content: close-quote;
-          transform: translateX(0);
+          font-size: 1.25rem;
         }
       }
-    }
 
-    & h3 {
-      margin-bottom: 0.333em;
-      font-family: var(--lato);
-      font-size: 1.25rem;
-      font-weight: 700;
-      line-height: 1.5;
+      & h3 {
+        margin-bottom: 0.333em;
+        font-family: var(--lato);
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.5;
 
-      @media screen and (width >= 768px) {
-        font-size: 1.5rem;
+        @media screen and (width >= 768px) {
+          font-size: 1.5rem;
+        }
       }
-    }
 
-    & .articleTextLink {
-      color: var(--accentColor);
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-        text-decoration-thickness: 1px;
+      & .articleTextLink {
+        color: var(--accentColor);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+        }
       }
     }
   }
