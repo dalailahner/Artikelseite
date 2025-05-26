@@ -911,6 +911,8 @@
 
   /* GLOSSAR */
   .glossarCont {
+    --tooltipIndicatorSize: 8px;
+
     position: relative;
 
     & .glossarTooltip {
@@ -939,13 +941,22 @@
       pointer-events: auto;
     }
 
+    & .glossarTooltipHoverFix {
+      width: 100%;
+      height: var(--tooltipIndicatorSize);
+      position: absolute;
+      bottom: calc(var(--tooltipIndicatorSize) * -1);
+      left: 0;
+      background: transparent;
+    }
+
     & .glossarTooltipIndicator {
       position: absolute;
       top: 100%;
       left: 50%;
       border-color: var(--accentColor) transparent transparent;
       border-style: solid;
-      border-width: 8px 8px 0;
+      border-width: var(--tooltipIndicatorSize) var(--tooltipIndicatorSize) 0;
       transform: translateX(-50%);
     }
   }
