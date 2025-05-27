@@ -314,7 +314,33 @@
       <div class="frfsc newCommentCont">
         <img class="newCommentContAvatar" src="/assets/authorImage.jpg" />
         <form class="fcfefs newCommentForm" name="commentForm" action="">
-          <textarea class="newCommentInput" placeholder="Kommentieren..." rows="3"></textarea>
+          <textarea class="newCommentInput" placeholder="schreiben..." rows="3"></textarea>
+          <button class="btn" type="submit">Senden</button>
+        </form>
+      </div>
+      <div class="fcfsc fakeCommentList">
+        <div class="frfsc commentListItem">
+          <div class="fakeCommentListItemAvatar"></div>
+          <div class="fcfsc fakeCommentListItemBubble"></div>
+        </div>
+        <div class="frfsc commentListItem">
+          <div class="fakeCommentListItemAvatar"></div>
+          <div class="fcfsc fakeCommentListItemBubble"></div>
+        </div>
+        <button id="showCommentModalBtn" class="btn" type="button">Kommentare zeigen</button>
+      </div>
+    </div>
+    <dialog id="commentModal" class="commentSectionCont">
+      <div class="frcsb commentSectionHeader">
+        <h2 class="commentsHeadline">Kommentare</h2>
+        <button id="commentModalCloseBtn" class="frcc btn" title="schließen" type="button">
+          <span class="material-symbols-rounded">close</span>
+        </button>
+      </div>
+      <div class="frfsc newCommentCont">
+        <img class="newCommentContAvatar" src="/assets/authorImage.jpg" />
+        <form class="fcfefs newCommentForm" name="commentForm" action="">
+          <textarea class="newCommentInput" placeholder="schreiben..." rows="3"></textarea>
           <button class="btn" type="submit">Senden</button>
         </form>
       </div>
@@ -351,7 +377,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
     <footer class="footer">
       <nav class="sitemapNav" aria-label="sitemap">
         <a href="/" class="logoLink">

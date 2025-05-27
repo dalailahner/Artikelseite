@@ -80,6 +80,15 @@ for (const btn of document.querySelectorAll(".glossarAudioBtn")) {
   });
 }
 
+// COMMENT MODAL
+const commentModal = document.querySelector("#commentModal");
+document.querySelector("#showCommentModalBtn").addEventListener("click", (ev) => {
+  commentModal.showModal();
+});
+document.querySelector("#commentModalCloseBtn").addEventListener("click", (ev) => {
+  commentModal.close();
+});
+
 ////////////
 // FUNCTIONS
 
