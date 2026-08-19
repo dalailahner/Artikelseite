@@ -61,7 +61,7 @@ for (const btn of document.querySelectorAll(".toolbarBtn")) {
 
     if (ev.currentTarget.classList.contains("share")) {
       // use native device share if mobile/tablet
-      if (navigator.userAgent.includes("Mobi") || window.matchMedia("(pointer: coarse)").matches) {
+      if ("ontouchstart" in window || navigator?.maxTouchPoints > 0 || navigator?.msMaxTouchPoints > 0 || navigator?.userAgent.includes("Mobi") || window?.matchMedia("(pointer: coarse)").matches) {
         navigator.share({
           title: "SCHWIMMA OIDA",
           text: "Artikel auf Salzburger Nachrichten",
