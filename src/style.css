@@ -770,18 +770,6 @@
       }
     }
 
-    &.like svg {
-      fill: transparent;
-      stroke: currentColor;
-      animation: dislikeAnim 0.3s ease;
-    }
-    &.like.active svg {
-      color: oklch(60% 0.22 30deg);
-      fill: currentColor;
-      stroke: currentColor;
-      animation: likeAnim 0.3s ease;
-    }
-
     &.bookmark {
       & :is(.normal, .add, .remove) {
         transition: inherit;
@@ -821,11 +809,38 @@
         }
       }
     }
+
+    &.gift {
+      transform: scale(1.1);
+      & #shareWithFriendIconBottom {
+        transform: translate(0, 0);
+        transition: transform 0.25s ease-out;
+      }
+      & #shareWithFriendIconTop {
+        transform-origin: 5px 10px;
+        transform: translate(0, 0) rotate(0);
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover {
+        & #shareWithFriendIconBottom {
+          transform: translate(0, 2px);
+        }
+        & #shareWithFriendIconTop {
+          transform: translate(-0.5px, 0.75px) rotate(-12deg);
+        }
+      }
+    }
   }
+
   .shareCont {
     --radius: calc(100% + var(--mainGap));
 
     position: relative;
+
+    & .share.active {
+      border: 2px solid var(--accentColor);
+    }
 
     & .shareLink {
       position: absolute;
@@ -1395,30 +1410,6 @@
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  @keyframes likeAnim {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes dislikeAnim {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
     }
   }
 }

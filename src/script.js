@@ -55,6 +55,10 @@ document.querySelector(".followAuthorBtn").addEventListener("click", (event) => 
 // TOOLBAR CLASS TOGGLE
 for (const btn of document.querySelectorAll(".toolbarBtn")) {
   btn.addEventListener("click", (ev) => {
+    if (ev.currentTarget.classList.contains("vorlesen") || ev.currentTarget.classList.contains("bookmark") || ev.currentTarget.classList.contains("share")) {
+      ev.currentTarget.classList.toggle("active");
+    }
+
     if (ev.currentTarget.classList.contains("share")) {
       // use native device share if mobile/tablet
       if (navigator.userAgent.includes("Mobi") || window.matchMedia("(pointer: coarse)").matches) {
@@ -65,10 +69,6 @@ for (const btn of document.querySelectorAll(".toolbarBtn")) {
         });
         return;
       }
-    }
-
-    if (!ev.currentTarget.classList.contains("shareLink")) {
-      ev.currentTarget.classList.toggle("active");
     }
   });
 }
