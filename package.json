@@ -8,13 +8,13 @@
     "build": "vite build"
   },
   "devDependencies": {
-    "browserslist": "^4.28.2",
-    "lightningcss": "^1.32.0",
+    "browserslist": "4.x.x",
+    "lightningcss": "1.x.x",
     "vite": "8.x.x"
   },
   "dependencies": {
-    "noicss.reducedmotion": "^1.0.2",
-    "noicss.reset": "^1.15.0",
-    "sortablejs": "^1.15.7"
+    "noicss.reducedmotion": "1.x.x",
+    "noicss.reset": "1.15.x",
+    "sortablejs": "1.15.x"
   }
 }

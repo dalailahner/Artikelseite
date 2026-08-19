@@ -4,30 +4,6 @@
 @import url("noicss.reducedmotion") layer(reducedmotion);
 
 @layer main {
-  @keyframes likeAnim {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  @keyframes dislikeAnim {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(0.9);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
   :root {
     --fgColor1: #191919;
     --fgColor2: #484848;
@@ -48,7 +24,7 @@
     --headlineSize: 1.8rem;
     --fullBorderRadius: calc(1px * infinity);
 
-    @media screen and (width >= 768px) {
+    @media (width >= 768px) {
       --headlineSize: 2.5rem;
     }
   }
@@ -141,11 +117,11 @@
     box-sizing: content-box;
     width: 1.75em;
     height: 1em;
+    container: toggleCont / size;
     position: relative;
     border: 1px solid var(--fgColor4);
     border-radius: var(--fullBorderRadius);
     transition: all 0.1s ease-out;
-    container: toggleCont / size;
     &:has(input[type="checkbox"]:focus-visible) {
       outline: 2px solid var(--accentColor);
       outline-offset: 2px;
@@ -331,7 +307,10 @@
     border: 2px solid transparent;
     border-radius: 6px;
     transform: translateY(-50%);
-    transition: width 0.15s ease-out, border 0.15s ease-out, background-color 0.15s ease-out;
+    transition:
+      width 0.15s ease-out,
+      border 0.15s ease-out,
+      background-color 0.15s ease-out;
 
     @media screen and (width >= 768px) {
       position: static;
@@ -411,7 +390,11 @@
       height: 1em;
       color: var(--fgColor1);
       font-size: 24px;
-      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 21;
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 21;
       background-color: transparent;
       opacity: 1;
       cursor: pointer;
@@ -475,7 +458,11 @@
       opacity: 1;
       & :where(.material-symbols-rounded) {
         color: var(--accentColor);
-        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 21;
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 21;
       }
     }
     & a.accountMenuItem {
@@ -932,7 +919,9 @@
       opacity: 0;
       pointer-events: none;
       transform: translateX(-50%);
-      transition: opacity 0.15s ease-out, bottom 0.15s ease-out;
+      transition:
+        opacity 0.15s ease-out,
+        bottom 0.15s ease-out;
     }
 
     &:is(:hover, :focus-within) .glossarTooltip {
@@ -955,9 +944,9 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      border-color: var(--accentColor) transparent transparent;
-      border-style: solid;
       border-width: var(--tooltipIndicatorSize) var(--tooltipIndicatorSize) 0;
+      border-style: solid;
+      border-color: var(--accentColor) transparent transparent;
       transform: translateX(-50%);
     }
   }
@@ -983,6 +972,7 @@
     line-height: 1.5;
   }
   .glossarWord {
+    display: inline;
     color: var(--accentColor);
   }
 
@@ -1405,6 +1395,30 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+
+  @keyframes likeAnim {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes dislikeAnim {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 }

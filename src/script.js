@@ -4,19 +4,19 @@ import Sortable from "sortablejs/modular/sortable.core.esm";
 // EVENTS
 
 // LOAD
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
   positionTooltips(".glossarTooltip", ".glossarTooltipIndicator");
 });
 
 // RESIZE
-window.addEventListener("resize", (event) => {
+window.addEventListener("resize", () => {
   setReadingProgress(".readingProgress", "h1.articleHeadline ~ .articleBody");
   positionTooltips(".glossarTooltip", ".glossarTooltipIndicator");
 });
 
 // SCROLL
 let lastScrollPos = 0;
-document.addEventListener("scroll", (event) => {
+document.addEventListener("scroll", () => {
   if (lastScrollPos < window.scrollY) document.querySelector(".mainHeader").classList.add("hide");
   if (lastScrollPos > window.scrollY) document.querySelector(".mainHeader").classList.remove("hide");
   lastScrollPos = window.scrollY;
@@ -26,14 +26,14 @@ document.addEventListener("scroll", (event) => {
 // ACCOUNT BUTTON
 const accountMenuEditBtn = document.querySelector(".accountMenuEditBtn");
 
-accountMenuEditBtn.addEventListener("click", (event) => {
+accountMenuEditBtn.addEventListener("click", () => {
   const inEditMode = event.currentTarget.closest(".accountMenu").dataset.edit === "true";
   event.currentTarget.closest(".accountMenu").dataset.edit = !inEditMode;
 });
 
 accountMenuEditBtn.addEventListener(
   "click",
-  (event) => {
+  () => {
     Sortable.create(document.querySelector(".accountMenuSortable"), {
       animation: 150,
       easing: "cubic-bezier(0.87, 0, 0.13, 1)",
