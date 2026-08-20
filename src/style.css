@@ -99,7 +99,7 @@
     font-size: 1.125em;
     font-weight: 700;
     border: 1px solid var(--accentColor);
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: var(--accentColor);
     transition: all 0.15s ease;
 
@@ -190,7 +190,7 @@
     font-weight: 700;
     text-decoration: none;
     border: 2px solid var(--accentColor);
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: var(--bgColor1);
     transform: translateY(calc(-100% - var(--jumpToArticleOffset) - var(--headerHeight)));
     transition: transform 0.2s ease;
@@ -287,7 +287,7 @@
     min-width: 1em;
     min-height: 1em;
     color: var(--fgColor3);
-    border-radius: var(--fullBorderRadius);
+    border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -305,7 +305,7 @@
     position: absolute;
     right: calc(calc(0.125em / 2 + 2px) * -1);
     border: 2px solid transparent;
-    border-radius: 6px;
+    border-radius: 8px;
     transform: translateY(-50%);
     transition:
       width 0.15s ease-out,
@@ -344,14 +344,15 @@
       appearance: none;
     }
   }
-  .searchBtn {
-    border-radius: 3px;
-    &:focus {
-      outline-offset: 0;
-    }
+  .searchBtn:focus {
+    outline-offset: 0;
   }
 
   /* HEADER MENU ACCOUNT */
+  .headerNavBtn.account {
+    border-radius: var(--fullBorderRadius);
+  }
+
   .accountMenuCont {
     --menuGap: 0.25em;
 
@@ -372,7 +373,7 @@
     padding: 0.25em 0.5em;
     min-width: 180px;
     border: 1px solid rgb(from var(--fgColor4) r g b / 50%);
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: var(--bgColor1);
     box-shadow: 0 3px 9px rgb(from var(--fgColor4) r g b / 25%);
   }
@@ -425,7 +426,7 @@
     gap: var(--menuGap);
     color: var(--fgColor1);
     text-decoration: none;
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: var(--bgColor1);
     cursor: pointer;
     transition: all 0.15s ease;
@@ -528,7 +529,7 @@
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 3px;
+    border-radius: 4px;
     transition: all 0.1s ease-out;
 
     &:hover {
@@ -639,7 +640,7 @@
   .followAuthorBtn {
     padding: 0.33em;
     color: var(--accentColor);
-    border-radius: 3px;
+    border-radius: 4px;
     background-color: transparent;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -927,7 +928,7 @@
       left: 50%;
       color: var(--bgColor1);
       font-size: 0.875em;
-      border-radius: 6px;
+      border-radius: 8px;
       background: var(--accentColor);
       box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
       visibility: hidden;
@@ -1047,7 +1048,7 @@
     color: var(--fgColor1);
     font-size: 1em;
     border: 1px solid var(--fgColor4);
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: var(--bgColor1);
     resize: vertical;
 
@@ -1068,7 +1069,7 @@
     gap: 0.125em;
     color: var(--fgColor1);
     border: 1px solid var(--fgColor4);
-    border-radius: 6px;
+    border-radius: 8px;
   }
   .commentListItemHeader {
     flex-wrap: wrap;
