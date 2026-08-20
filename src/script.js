@@ -54,20 +54,25 @@ document.querySelector(".followAuthorBtn").addEventListener("click", (event) => 
 
 // TOOLBAR CLASS TOGGLE
 for (const btn of document.querySelectorAll(".toolbarBtn")) {
-  btn.addEventListener("click", (ev) => {
-    if (ev.currentTarget.classList.contains("vorlesen") || ev.currentTarget.classList.contains("bookmark") || ev.currentTarget.classList.contains("share")) {
+  btn.addEventListener("click", async (ev) => {
+    if (ev.currentTarget.classList.contains("vorlesen") || ev.currentTarget.classList.contains("bookmark")) {
       ev.currentTarget.classList.toggle("active");
     }
 
     if (ev.currentTarget.classList.contains("share")) {
       // use native device share if mobile/tablet
-      if ("ontouchstart" in window || navigator?.maxTouchPoints > 0 || navigator?.msMaxTouchPoints > 0 || navigator?.userAgent.includes("Mobi") || window?.matchMedia("(pointer: coarse)").matches) {
-        navigator.share({
-          title: "SCHWIMMA OIDA",
-          text: "Artikel auf Salzburger Nachrichten",
-          url: "https://www.opengraph.xyz/url/https%3A%2F%2Fwww.sn.at%2Fleben%2Fgesundheit%2Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952",
-        });
-        return;
+      if ("ontouchstart" in window || navigator?.userAgent.includes("Mobi") || window?.matchMedia("(pointer: coarse)").matches || window.matchMedia("(width < 768px)").matches) {
+        try {
+          await navigator.share({
+            title: "SCHWIMMA OIDA",
+            text: "Artikel auf Salzburger Nachrichten",
+            url: "https://www.opengraph.xyz/url/https%3A%2F%2Fwww.sn.at%2Fleben%2Fgesundheit%2Fschwimmen-die-vielseitigen-vorteile-koerper-seele-159201952",
+          });
+        } catch (error) {
+          console.error("Error sharing with navigator.share():", error);
+        }
+      } else {
+        ev.currentTarget.classList.toggle("active");
       }
     }
   });
