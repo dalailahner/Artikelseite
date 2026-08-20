@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   publicDir: "static",
+  base: "./",
   css: {
     transformer: "lightningcss",
     lightningcss: {
