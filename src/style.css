@@ -829,10 +829,10 @@
 
       &:hover {
         & #shareWithFriendIconBottom {
-          transform: translate(0, 2px);
+          transform: translate(0, 1px);
         }
         & #shareWithFriendIconTop {
-          transform: translate(-0.5px, 0.75px) rotate(-12deg);
+          transform: translate(-0.5px, 1px) rotate(-12deg);
         }
       }
     }
