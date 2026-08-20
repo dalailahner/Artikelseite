@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "browserslist": "4.x.x",
+    "gh-pages": "^6.3.0",
     "lightningcss": "1.x.x",
     "vite": "8.x.x"
   },
