@@ -676,6 +676,10 @@
     width: min(calc(100vw - calc(var(--mainGap) * 2)), var(--pageWidth));
     display: block;
 
+    @media screen and (width >= 768px) and (width < 1024px) {
+      width: 100%;
+    }
+
     @media screen and (width >= 768px) {
       display: grid;
       grid-template-columns: 1fr var(--articleWidth) 1fr;
@@ -840,10 +844,13 @@
     position: relative;
 
     & .share.active {
-      border: 2px solid var(--accentColor);
+      @media screen and (width >= 768px) {
+        border: 2px solid var(--accentColor);
+      }
     }
 
     & .shareLink {
+      display: none;
       position: absolute;
       top: 0;
       opacity: 0;
@@ -871,6 +878,7 @@
 
     &:has(.active) .shareLink,
     & .shareLink:focus-visible {
+      display: flex;
       opacity: 1;
       transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
     }
