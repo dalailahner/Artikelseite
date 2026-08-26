@@ -22,7 +22,7 @@ importers:
         specifier: 4.x.x
         version: 4.28.8
       gh-pages:
-        specifier: 6.x.0
+        specifier: 6.x.x
         version: 6.3.0
       lightningcss:
         specifier: 1.x.x
