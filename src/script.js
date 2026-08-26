@@ -57,11 +57,12 @@ for (const btn of document.querySelectorAll(".toolbarBtn")) {
   btn.addEventListener("click", async (ev) => {
     if (ev.currentTarget.classList.contains("vorlesen") || ev.currentTarget.classList.contains("bookmark")) {
       ev.currentTarget.classList.toggle("active");
+      return;
     }
 
     if (ev.currentTarget.classList.contains("share")) {
       // use native device share if mobile/tablet
-      if ("ontouchstart" in window || navigator?.userAgent.includes("Mobi") || window?.matchMedia("(pointer: coarse)").matches || window.matchMedia("(width < 768px)").matches) {
+      if ("ontouchstart" in window || navigator?.userAgent.includes("Mobi") || window?.matchMedia("(pointer: coarse)").matches || window?.matchMedia("(width < 768px)").matches) {
         try {
           await navigator.share({
             title: "SCHWIMMA OIDA",
@@ -71,15 +72,11 @@ for (const btn of document.querySelectorAll(".toolbarBtn")) {
         } catch (error) {
           console.error("Error sharing with navigator.share():", error);
         }
-      } else {
-        ev.currentTarget.classList.toggle("active");
       }
+      return;
     }
   });
 }
-document.querySelector(".toolbarBtn.share").addEventListener("blur", (ev) => {
-  ev.target.classList.remove("active");
-});
 
 // GLOSSAR AUDIO BTN
 for (const btn of document.querySelectorAll(".glossarAudioBtn")) {

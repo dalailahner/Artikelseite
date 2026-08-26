@@ -845,12 +845,6 @@
 
     & .share {
       border: 2px solid transparent;
-
-      &.active {
-        @media screen and (width >= 768px) {
-          border-color: var(--accentColor);
-        }
-      }
     }
 
     & .shareLink {
@@ -883,15 +877,22 @@
       }
     }
 
-    &:has(.active) .shareLink,
-    & .shareLink:focus-visible {
-      display: flex;
-      opacity: 1;
-      transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
+    &:focus-within {
+      @media screen and (width >= 768px) and (pointer: fine) {
+        & .share {
+          border-color: var(--accentColor);
+        }
 
-      @starting-style {
-        opacity: 0;
-        transform: none;
+        & .shareLink {
+          display: flex;
+          opacity: 1;
+          transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)));
+
+          @starting-style {
+            opacity: 0;
+            transform: none;
+          }
+        }
       }
     }
   }
