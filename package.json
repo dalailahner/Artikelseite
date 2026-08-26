@@ -12,13 +12,13 @@
   },
   "devDependencies": {
     "browserslist": "4.x.x",
-    "gh-pages": "^6.3.0",
+    "gh-pages": "6.x.x",
     "lightningcss": "1.x.x",
     "vite": "8.x.x"
   },
   "dependencies": {
     "noicss.reducedmotion": "1.x.x",
-    "noicss.reset": "1.15.x",
+    "noicss.reset": "1.16.2",
     "sortablejs": "1.15.x"
   }
 }
