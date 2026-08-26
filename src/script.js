@@ -77,6 +77,9 @@ for (const btn of document.querySelectorAll(".toolbarBtn")) {
     }
   });
 }
+document.querySelector(".toolbarBtn.share").addEventListener("blur", (ev) => {
+  ev.target.classList.remove("active");
+});
 
 // GLOSSAR AUDIO BTN
 for (const btn of document.querySelectorAll(".glossarAudioBtn")) {
