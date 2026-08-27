@@ -1421,7 +1421,7 @@
     }
 
     & .agbNav {
-      flex-wrap: wrap;
+      flex-wrap: balance;
       gap: calc(var(--mainGap) / 2);
       list-style: none;
     }
